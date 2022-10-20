@@ -1,6 +1,6 @@
 # Based on this: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-in-docker
 
-FROM node:17-slim as build-chrome
+FROM node:19-slim as build-chrome
 LABEL org.opencontainers.image.source https://github.com/SupaStuff/chrome
 
 ARG USERNAME=vscode
