@@ -38,7 +38,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push base image
-        uses: docker/build-push-action@v2.7.0
+        uses: docker/build-push-action@v3.3.0
         with:
           target: build-chrome
           push: true
@@ -49,7 +49,7 @@ jobs:
             ghcr.io/${{ env.image_name }}:${{ env.sha }}
 
       - name: Push chrome + Python
-        uses: docker/build-push-action@v2.7.0
+        uses: docker/build-push-action@v3.3.0
         with:
           target: build-python
           push: true
@@ -60,7 +60,7 @@ jobs:
             ghcr.io/${{ env.image_name }}:python-${{ env.sha }}
 
       - name: Push chrome + Jupyter
-        uses: docker/build-push-action@v2.7.0
+        uses: docker/build-push-action@v3.3.0
         with:
           target: build-jupyter
           push: true
@@ -71,7 +71,7 @@ jobs:
             ghcr.io/${{ env.image_name }}:jupyter-${{ env.sha }}
 
       - name: Push devcontainer
-        uses: docker/build-push-action@v2.7.0
+        uses: docker/build-push-action@v3.3.0
         with:
           target: build-vscode
           push: true
@@ -82,7 +82,7 @@ jobs:
             ghcr.io/${{ env.image_name }}:vscode-${{ env.sha }}
 
       - name: Push devcontainer with Python
-        uses: docker/build-push-action@v2.7.0
+        uses: docker/build-push-action@v3.3.0
         with:
           target: build-python-vscode
           push: true
@@ -93,7 +93,7 @@ jobs:
             ghcr.io/${{ env.image_name }}:python-vscode-${{ env.sha }}
 
       - name: Push devcontainer with Jupyter
-        uses: docker/build-push-action@v2.7.0
+        uses: docker/build-push-action@v3.3.0
         with:
           target: build-jupyter-vscode
           push: true
